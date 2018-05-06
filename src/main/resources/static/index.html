@@ -1,0 +1,54 @@
+<!doctype html>
+<!--
+  ~ Chatfoundry - a chatroom implementation using Kotlin/Redis, deployed to Cloud Foundry
+  ~ Copyright (C) 2018 Alexandre Roman
+  ~
+  ~ This program is free software: you can redistribute it and/or modify
+  ~ it under the terms of the GNU General Public License as published by
+  ~ the Free Software Foundation, either version 3 of the License, or
+  ~ (at your option) any later version.
+  ~
+  ~ This program is distributed in the hope that it will be useful,
+  ~ but WITHOUT ANY WARRANTY; without even the implied warranty of
+  ~ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  ~ GNU General Public License for more details.
+  ~
+  ~ You should have received a copy of the GNU General Public License
+  ~ along with this program.  If not, see <http://www.gnu.org/licenses/>.
+  -->
+
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Chatfoundry</title>
+
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/normalize.css@8.0.0/normalize.css">
+    <link rel="stylesheet" href="styles.css">
+    <script type="text/javascript" src="script.js"></script>
+</head>
+<body>
+<div id="container">
+    <div id="banner">
+        <h1 id="message">Welcome to Chatfoundry!</h1>
+    </div>
+    <div id="form">
+        <div id="intro">
+            <p>If you're seeing this page, you successfully deployed this app to <strong>Cloud Foundry</strong>!</p>
+            <p>Please have a seat, and discuss with other people.</p>
+        </div>
+
+        <div id="error"></div>
+
+        <form>
+            <input id="name" type="text" placeholder="Please enter your name" required autofocus/>
+            <input id="content" type="text" placeholder="Please enter your message" required/>
+            <button id="send" type="button">Send</button>
+        </form>
+
+        <div id="messages"></div>
+    </div>
+</div>
+</body>
+</html>

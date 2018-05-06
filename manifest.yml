@@ -1,0 +1,11 @@
+---
+applications:
+- name: chatfoundry
+  instances: 2
+  memory: 1G
+  random-route: true
+  path: target/com.github.alexandreroman.chatfoundry.jar
+  services:
+  - redis
+  env:
+      SPRING_PROFILES_ACTIVE: cloudfoundry
