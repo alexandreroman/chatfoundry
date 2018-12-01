@@ -28,7 +28,7 @@ import org.springframework.data.redis.connection.jedis.JedisConnectionFactory
  * Local configuration (dev mode).
  */
 @Configuration
-@Profile("!cloudfoundry")
+@Profile("!cloud")
 class DevConfig {
     @Bean
     fun redisConnectionFactory(): RedisConnectionFactory {

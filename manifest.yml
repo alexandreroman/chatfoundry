@@ -7,5 +7,3 @@ applications:
   path: target/com.github.alexandreroman.chatfoundry.jar
   services:
   - redis
-  env:
-      SPRING_PROFILES_ACTIVE: cloudfoundry

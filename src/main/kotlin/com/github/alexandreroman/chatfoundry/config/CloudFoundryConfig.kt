@@ -28,7 +28,7 @@ import org.springframework.data.redis.connection.RedisConnectionFactory
  * Cloud Foundry specific configuration.
  */
 @Configuration
-@Profile("cloudfoundry")
+@Profile("cloud")
 class CloudFoundryConfig : AbstractCloudConfig() {
     @Bean
     fun redisConnectionFactory(): RedisConnectionFactory {
