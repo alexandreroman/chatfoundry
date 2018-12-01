@@ -7,7 +7,7 @@ The purpose of this app is to play with [Cloud Foundry](https://www.cloudfoundry
 
 Tests are made using [Pivotal Web Services (PWS)](https://run.pivotal.io),
 but you can also deploy this web on your own instance.
-You may use [PCF Dev](https://pivotal.io/fr/pcf-dev) to deploy this app on your workstation.
+You may use [PCF Dev](https://pivotal.io/pcf-dev) to deploy this app on your workstation.
 
 You need a Java 8 SDK to build this app.
 
@@ -28,6 +28,11 @@ To deploy this app to PWS, use these commands:
 
 If you are using a Cloud Foundry instance other than PWS, make sure you bind
 a Redis service to this app.
+
+If you're running this app locally, you need a running Redis instance.
+You can use the official Redis Docker image:
+
+    $ docker run --name redis --rm -p "6379:6379/tcp" redis:5
 
 ## Enjoy!
 
