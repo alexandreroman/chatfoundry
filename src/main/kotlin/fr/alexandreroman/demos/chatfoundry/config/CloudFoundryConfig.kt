@@ -16,23 +16,23 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-package com.github.alexandreroman.chatfoundry.config
+package fr.alexandreroman.demos.chatfoundry.config
 
+import org.springframework.cloud.config.java.AbstractCloudConfig
 import org.springframework.context.annotation.Bean
 import org.springframework.context.annotation.Configuration
 import org.springframework.context.annotation.Profile
 import org.springframework.data.redis.connection.RedisConnectionFactory
-import org.springframework.data.redis.connection.jedis.JedisConnectionFactory
 
 /**
- * Local configuration (dev mode).
+ * Cloud Foundry specific configuration.
  */
 @Configuration
-@Profile("!cloud")
-class DevConfig {
+@Profile("cloud")
+class CloudFoundryConfig : AbstractCloudConfig() {
     @Bean
     fun redisConnectionFactory(): RedisConnectionFactory {
-        // Connect to a local Redis server instance.
-        return JedisConnectionFactory()
+        // Bind to the Redis service instance provided by Cloud Foundry.
+        return connectionFactory().redisConnectionFactory()
     }
 }

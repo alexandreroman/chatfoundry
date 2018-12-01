@@ -16,9 +16,9 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-package com.github.alexandreroman.chatfoundry.event
+package fr.alexandreroman.demos.chatfoundry.event
 
-import com.github.alexandreroman.chatfoundry.repo.Message
+import fr.alexandreroman.demos.chatfoundry.repo.Message
 
 /**
  * Event fired when the messages list is updated.

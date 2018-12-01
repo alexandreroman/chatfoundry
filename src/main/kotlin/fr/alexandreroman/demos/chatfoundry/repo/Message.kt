@@ -16,7 +16,7 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-package com.github.alexandreroman.chatfoundry.repo
+package fr.alexandreroman.demos.chatfoundry.repo
 
 import java.time.OffsetDateTime
 

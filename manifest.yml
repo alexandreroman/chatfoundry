@@ -4,6 +4,6 @@ applications:
   instances: 2
   memory: 1G
   random-route: true
-  path: target/com.github.alexandreroman.chatfoundry.jar
+  path: target/fr.alexandreroman.demos.chatfoundry.jar
   services:
   - redis

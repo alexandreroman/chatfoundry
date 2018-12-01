@@ -16,23 +16,29 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-package com.github.alexandreroman.chatfoundry.config
+package fr.alexandreroman.demos.chatfoundry.event
 
-import org.springframework.cloud.config.java.AbstractCloudConfig
-import org.springframework.context.annotation.Bean
-import org.springframework.context.annotation.Configuration
-import org.springframework.context.annotation.Profile
-import org.springframework.data.redis.connection.RedisConnectionFactory
+import fr.alexandreroman.demos.chatfoundry.repo.Message
+import org.slf4j.LoggerFactory
+import org.springframework.data.redis.core.RedisTemplate
+import org.springframework.stereotype.Component
 
 /**
- * Cloud Foundry specific configuration.
+ * Component responsible for publishing app events.
  */
-@Configuration
-@Profile("cloud")
-class CloudFoundryConfig : AbstractCloudConfig() {
-    @Bean
-    fun redisConnectionFactory(): RedisConnectionFactory {
-        // Bind to the Redis service instance provided by Cloud Foundry.
-        return connectionFactory().redisConnectionFactory()
+@Component
+class EventPublisher(val redisTemplate: RedisTemplate<String, Message>) {
+    companion object {
+        const val MESSAGES_LIST_UPDATED_TOPIC = "MESSAGES_LIST_UPDATED_TOPIC"
+    }
+
+    private val logger = LoggerFactory.getLogger(EventPublisher::class.java)
+
+    /**
+     * Fire an event when the messages list is updated.
+     */
+    fun fire(e: MessagesListUpdatedEvent) {
+        logger.info("Publishing event: {}", e)
+        redisTemplate.convertAndSend(MESSAGES_LIST_UPDATED_TOPIC, e)
     }
 }

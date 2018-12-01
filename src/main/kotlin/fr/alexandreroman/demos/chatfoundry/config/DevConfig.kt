@@ -16,29 +16,23 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-package com.github.alexandreroman.chatfoundry.event
+package fr.alexandreroman.demos.chatfoundry.config
 
-import com.github.alexandreroman.chatfoundry.repo.Message
-import org.slf4j.LoggerFactory
-import org.springframework.data.redis.core.RedisTemplate
-import org.springframework.stereotype.Component
+import org.springframework.context.annotation.Bean
+import org.springframework.context.annotation.Configuration
+import org.springframework.context.annotation.Profile
+import org.springframework.data.redis.connection.RedisConnectionFactory
+import org.springframework.data.redis.connection.jedis.JedisConnectionFactory
 
 /**
- * Component responsible for publishing app events.
+ * Local configuration (dev mode).
  */
-@Component
-class EventPublisher(val redisTemplate: RedisTemplate<String, Message>) {
-    companion object {
-        const val MESSAGES_LIST_UPDATED_TOPIC = "MESSAGES_LIST_UPDATED_TOPIC"
-    }
-
-    private val logger = LoggerFactory.getLogger(EventPublisher::class.java)
-
-    /**
-     * Fire an event when the messages list is updated.
-     */
-    fun fire(e: MessagesListUpdatedEvent) {
-        logger.info("Publishing event: {}", e)
-        redisTemplate.convertAndSend(MESSAGES_LIST_UPDATED_TOPIC, e)
+@Configuration
+@Profile("!cloud")
+class DevConfig {
+    @Bean
+    fun redisConnectionFactory(): RedisConnectionFactory {
+        // Connect to a local Redis server instance.
+        return JedisConnectionFactory()
     }
 }

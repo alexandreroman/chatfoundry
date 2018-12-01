@@ -16,12 +16,12 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-package com.github.alexandreroman.chatfoundry.config
+package fr.alexandreroman.demos.chatfoundry.config
 
 import com.fasterxml.jackson.databind.ObjectMapper
-import com.github.alexandreroman.chatfoundry.event.EventPublisher
-import com.github.alexandreroman.chatfoundry.event.MessagesListUpdatedEvent
-import com.github.alexandreroman.chatfoundry.rest.MessagesResource
+import fr.alexandreroman.demos.chatfoundry.event.EventPublisher
+import fr.alexandreroman.demos.chatfoundry.event.MessagesListUpdatedEvent
+import fr.alexandreroman.demos.chatfoundry.rest.MessagesResource
 import org.springframework.beans.factory.annotation.Qualifier
 import org.springframework.context.annotation.Bean
 import org.springframework.context.annotation.Configuration

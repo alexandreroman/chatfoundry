@@ -1,5 +1,5 @@
 /*
- * Chatfoundry - a basic chatroom written in Kotlin/Redis, deployed to Cloud Foundry
+ * Chatfoundry - a chatroom implementation using Kotlin/Redis, deployed to Cloud Foundry
  * Copyright (C) 2018 Alexandre Roman
  *
  * This program is free software: you can redistribute it and/or modify
@@ -16,7 +16,7 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-package com.github.alexandreroman.chatfoundry
+package fr.alexandreroman.demos.chatfoundry
 
 import org.springframework.boot.SpringApplication
 import org.springframework.boot.autoconfigure.SpringBootApplication

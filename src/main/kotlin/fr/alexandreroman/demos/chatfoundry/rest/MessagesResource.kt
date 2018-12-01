@@ -16,11 +16,11 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-package com.github.alexandreroman.chatfoundry.rest
+package fr.alexandreroman.demos.chatfoundry.rest
 
-import com.github.alexandreroman.chatfoundry.event.MessagesListUpdatedEvent
-import com.github.alexandreroman.chatfoundry.repo.Message
-import com.github.alexandreroman.chatfoundry.repo.MessageRepository
+import fr.alexandreroman.demos.chatfoundry.event.MessagesListUpdatedEvent
+import fr.alexandreroman.demos.chatfoundry.repo.Message
+import fr.alexandreroman.demos.chatfoundry.repo.MessageRepository
 import org.slf4j.LoggerFactory
 import org.springframework.http.HttpStatus
 import org.springframework.http.MediaType

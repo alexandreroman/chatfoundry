@@ -16,10 +16,10 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-package com.github.alexandreroman.chatfoundry.repo
+package fr.alexandreroman.demos.chatfoundry.repo
 
-import com.github.alexandreroman.chatfoundry.event.EventPublisher
-import com.github.alexandreroman.chatfoundry.event.MessagesListUpdatedEvent
+import fr.alexandreroman.demos.chatfoundry.event.EventPublisher
+import fr.alexandreroman.demos.chatfoundry.event.MessagesListUpdatedEvent
 import org.slf4j.LoggerFactory
 import org.springframework.data.redis.core.RedisTemplate
 import org.springframework.stereotype.Repository
