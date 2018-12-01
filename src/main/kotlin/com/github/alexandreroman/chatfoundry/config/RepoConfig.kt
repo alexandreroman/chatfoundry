@@ -36,7 +36,7 @@ class RepoConfig {
     fun redisTemplate(connFactory: RedisConnectionFactory,
                       objectMapper: ObjectMapper): RedisTemplate<String, Message> {
         val redisTemplate = RedisTemplate<String, Message>()
-        redisTemplate.connectionFactory = connFactory
+        redisTemplate.setConnectionFactory(connFactory)
 
         // Setup Redis object serialization: objects are mapped to JSON messages.
         val stringSerializer = StringRedisSerializer()

@@ -42,7 +42,7 @@ class EventConfig {
             : RedisMessageListenerContainer {
         // Use Redis as a PUB/SUB server instance.
         val container = RedisMessageListenerContainer()
-        container.connectionFactory = connFactory
+        container.setConnectionFactory(connFactory)
         container.addMessageListener(a, ChannelTopic(EventPublisher.MESSAGES_LIST_UPDATED_TOPIC))
         return container
     }
