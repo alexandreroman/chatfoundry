@@ -15,7 +15,7 @@ You need a Java 8 SDK to build this app.
 
 This project is using [Maven 3.5+](http://maven.apache.org):
 
-    $ mvn clean package
+    $ ./mvnw clean package
 
 ## How to run this app
 
